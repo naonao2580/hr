@@ -37,6 +37,13 @@ module.exports = {
             warnings: false,
             errors: true
         },
+        // 反向代理
+        proxy: {
+            '/api': {
+                target: 'http://ihrm.itheima.net/',
+                changeOrigin: true // 只有这个值为true的情况下 才表示开启跨域
+            }
+        }
     },
     configureWebpack: {
         // provide the app's title in webpack's name field, so that
