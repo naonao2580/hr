@@ -1,0 +1,16 @@
+import layout from '@/layout'
+
+export default {
+    path: '/departments', // 路由地址
+    name: 'departments', // 路由的name属性
+    component: layout,
+    children: [{
+        path: '', // 二级路由啥都不写  ，不但有layout  还有approvals
+        component: () =>
+            import ('@/views/departments'),
+        meta: {
+            title: '组织架构', // 侧挡行读取这里的title属性
+            icon: 'tree'
+        }
+    }]
+}
