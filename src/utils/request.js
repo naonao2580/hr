@@ -47,7 +47,7 @@ service.interceptors.response.use(response => {
 }, error => {
     // token 超时被动处理
     if (error.response && error.response.data && error.response.data.code === 10002) {
-        store.dispatch('user/login') // 清除token
+        store.dispatch('user/logout') // 清除token
         router.push('/login') // 跳转登录页
     } else {
         Message.error(error.message)
